@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4lav21s3347"
-path="res://.godot/imported/FloatingWindow.png-3a75edc30ffea075fac79bb37b21b6d1.ctex"
+path="res://.godot/imported/FloatingWindow.png-eef10df98fcea44ff9d6e0624f135084.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hubimages/FloatingWindow.png"
-dest_files=["res://.godot/imported/FloatingWindow.png-3a75edc30ffea075fac79bb37b21b6d1.ctex"]
+source_file="res://addons/hubimages/FloatingWindow.png"
+dest_files=["res://.godot/imported/FloatingWindow.png-eef10df98fcea44ff9d6e0624f135084.ctex"]
 
 [params]
 

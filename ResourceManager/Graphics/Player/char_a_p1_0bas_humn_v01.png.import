@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr7anwtk10cj8"
-path="res://.godot/imported/BottomDock.png-d01ca350cd95c135a7e7c5fe46c85384.ctex"
+uid="uid://cn3ur3430fawm"
+path="res://.godot/imported/char_a_p1_0bas_humn_v01.png-d6419c7b6b502cd3e32bdc4360b8a197.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hubimages/BottomDock.png"
-dest_files=["res://.godot/imported/BottomDock.png-d01ca350cd95c135a7e7c5fe46c85384.ctex"]
+source_file="res://Graphics/Player/char_a_p1_0bas_humn_v01.png"
+dest_files=["res://.godot/imported/char_a_p1_0bas_humn_v01.png-d6419c7b6b502cd3e32bdc4360b8a197.ctex"]
 
 [params]
 

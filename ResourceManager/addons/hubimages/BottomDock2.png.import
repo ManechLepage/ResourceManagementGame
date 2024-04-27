@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://duhs3ju2q0nf0"
-path="res://.godot/imported/BottomDock2.png-406e8a58ac3deb1f4b7ae6dd714b9a22.ctex"
+path="res://.godot/imported/BottomDock2.png-0a97a685b87fc0cdad465143def61bae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hubimages/BottomDock2.png"
-dest_files=["res://.godot/imported/BottomDock2.png-406e8a58ac3deb1f4b7ae6dd714b9a22.ctex"]
+source_file="res://addons/hubimages/BottomDock2.png"
+dest_files=["res://.godot/imported/BottomDock2.png-0a97a685b87fc0cdad465143def61bae.ctex"]
 
 [params]
 
