@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://co0n4hlvwa44y"]
+
+[ext_resource type="Texture2D" uid="uid://cbllyros7w78m" path="res://Graphics/UI/Inventory/Slot/normal_slot.png" id="1_ifqnd"]
+[ext_resource type="Texture2D" uid="uid://bob00o53sxp7v" path="res://Graphics/UI/Inventory/Slot/pressed_slot.png" id="2_p1tsd"]
+[ext_resource type="Texture2D" uid="uid://kj3ghtuo1c28" path="res://Graphics/UI/Inventory/Slot/hovered_slot.png" id="3_wohab"]
+[ext_resource type="Script" path="res://Scripts/Inventory/slot.gd" id="4_2khno"]
+[ext_resource type="Texture2D" uid="uid://cijnmxj22ptn1" path="res://icon.svg" id="4_y6om5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rpeua"]
+font_size = 20
+outline_size = 4
+outline_color = Color(0.368627, 0.368627, 0.368627, 1)
+
+[node name="Slot" type="TextureButton"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+toggle_mode = true
+texture_normal = ExtResource("1_ifqnd")
+texture_pressed = ExtResource("2_p1tsd")
+texture_hover = ExtResource("3_wohab")
+script = ExtResource("4_2khno")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 7.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_y6om5")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 35.0
+offset_right = 60.0
+offset_bottom = 71.0
+text = "1"
+label_settings = SubResource("LabelSettings_rpeua")
+horizontal_alignment = 2
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

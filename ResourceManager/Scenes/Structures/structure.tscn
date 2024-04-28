@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqwc0fff3pdl2"]
+
+[ext_resource type="Texture2D" uid="uid://drlgd1olq4jdd" path="res://Graphics/Structures/placeholder.png" id="1_npkif"]
+[ext_resource type="Script" path="res://Scenes/Structures/structure.gd" id="2_1iaur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cl6vt"]
+size = Vector2(64, 64)
+
+[node name="Strucuture" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_npkif")
+script = ExtResource("2_1iaur")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_cl6vt")

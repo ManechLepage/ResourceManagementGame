@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0eu55lor5wyc"]
+
+[ext_resource type="PackedScene" uid="uid://bxo7opjak0q7e" path="res://Scenes/UI/Inventories/inventory.tscn" id="1_8i7bl"]
+[ext_resource type="Script" path="res://Scripts/Inventory/LinkComponent.gd" id="2_kp68l"]
+
+[node name="Player Inventory" instance=ExtResource("1_8i7bl")]
+offset_right = 69.5
+offset_bottom = 97.5
+can_be_dragged = true
+
+[node name="GridInventory" parent="Panel" index="0"]
+columns = 5
+
+[node name="LinkComponent" type="Node" parent="." index="1"]
+script = ExtResource("2_kp68l")
+
+[connection signal="toggled" from="Panel/GridInventory/Slot" to="Panel/GridInventory/Slot" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@414780" to="Panel/GridInventory/@TextureButton@414780" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@414781" to="Panel/GridInventory/@TextureButton@414781" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@414782" to="Panel/GridInventory/@TextureButton@414782" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@414783" to="Panel/GridInventory/@TextureButton@414783" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@414784" to="Panel/GridInventory/@TextureButton@414784" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@414785" to="Panel/GridInventory/@TextureButton@414785" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@414786" to="Panel/GridInventory/@TextureButton@414786" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@414787" to="Panel/GridInventory/@TextureButton@414787" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@414788" to="Panel/GridInventory/@TextureButton@414788" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@414789" to="Panel/GridInventory/@TextureButton@414789" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@414790" to="Panel/GridInventory/@TextureButton@414790" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@414791" to="Panel/GridInventory/@TextureButton@414791" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@414792" to="Panel/GridInventory/@TextureButton@414792" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@414793" to="Panel/GridInventory/@TextureButton@414793" method="_on_toggled"]

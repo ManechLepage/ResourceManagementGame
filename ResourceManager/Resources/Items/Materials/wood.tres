@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemMaterial" load_steps=3 format=3 uid="uid://cfeecer26olu5"]
+
+[ext_resource type="Texture2D" uid="uid://dpqc1vmihwb0t" path="res://Graphics/Items/Materials/wood.png" id="1_ditrw"]
+[ext_resource type="Script" path="res://Scripts/Inventory/Items/Material.gd" id="1_x8pg0"]
+
+[resource]
+script = ExtResource("1_x8pg0")
+name = "Wooden Log"
+description = "Basic item, can be used to craft multiple things"
+icon = ExtResource("1_ditrw")

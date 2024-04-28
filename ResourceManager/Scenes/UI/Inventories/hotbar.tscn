@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1205llaimwtv"]
+
+[ext_resource type="PackedScene" uid="uid://bxo7opjak0q7e" path="res://Scenes/UI/Inventories/inventory.tscn" id="1_780cf"]
+[ext_resource type="Script" path="res://Scripts/Inventory/HotbarComponent.gd" id="2_8juq0"]
+
+[node name="Inventory" instance=ExtResource("1_780cf")]
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -218.0
+offset_top = -129.0
+offset_right = 128.0
+offset_bottom = -55.0
+grow_vertical = 0
+slot_count = 5
+
+[node name="GridInventory" parent="Panel" index="0"]
+columns = 5
+
+[node name="HotbarComponent" type="Node" parent="." index="1"]
+script = ExtResource("2_8juq0")
+slot_index_linked = Vector2i(0, 4)
+
+[connection signal="toggled" from="Panel/GridInventory/Slot" to="Panel/GridInventory/Slot" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@419415" to="Panel/GridInventory/@TextureButton@419415" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@419416" to="Panel/GridInventory/@TextureButton@419416" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@419417" to="Panel/GridInventory/@TextureButton@419417" method="_on_toggled"]
+[connection signal="toggled" from="Panel/GridInventory/@TextureButton@419418" to="Panel/GridInventory/@TextureButton@419418" method="_on_toggled"]

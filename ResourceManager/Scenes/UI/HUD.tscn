@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcuim410h40ab"]
+
+[ext_resource type="PackedScene" uid="uid://c0eu55lor5wyc" path="res://Scenes/UI/Inventories/player_inventory.tscn" id="2_24rk5"]
+[ext_resource type="PackedScene" uid="uid://b1205llaimwtv" path="res://Scenes/UI/Inventories/hotbar.tscn" id="2_unfxp"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Hotbar" parent="." instance=ExtResource("2_unfxp")]
+offset_left = -213.0
+offset_top = -124.0
+offset_right = 133.0
+offset_bottom = -50.0
+
+[node name="InventoryControl" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.297
+anchor_top = 0.23
+anchor_right = 0.598
+anchor_bottom = 0.636
+offset_left = -0.144012
+offset_top = -0.0400085
+offset_right = 0.103943
+offset_bottom = -0.128021
+
+[node name="Panel" type="Panel" parent="InventoryControl"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -172.5
+offset_right = 173.5
+offset_bottom = 37.0
+grow_horizontal = 2
+
+[node name="PlayerInventory" parent="InventoryControl" instance=ExtResource("2_24rk5")]
+layout_mode = 1
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -172.5
+offset_top = -223.0
+offset_right = 173.5
+offset_bottom = -13.0
+grow_vertical = 0
+
+[connection signal="toggled" from="Hotbar/Panel/GridInventory/Slot" to="Hotbar/Panel/GridInventory/Slot" method="_on_toggled"]
+[connection signal="toggled" from="Hotbar/Panel/GridInventory/@TextureButton@420005" to="Hotbar/Panel/GridInventory/@TextureButton@420005" method="_on_toggled"]
+[connection signal="toggled" from="Hotbar/Panel/GridInventory/@TextureButton@420006" to="Hotbar/Panel/GridInventory/@TextureButton@420006" method="_on_toggled"]
+[connection signal="toggled" from="Hotbar/Panel/GridInventory/@TextureButton@420007" to="Hotbar/Panel/GridInventory/@TextureButton@420007" method="_on_toggled"]
+[connection signal="toggled" from="Hotbar/Panel/GridInventory/@TextureButton@420008" to="Hotbar/Panel/GridInventory/@TextureButton@420008" method="_on_toggled"]
+[connection signal="inventory_changed" from="InventoryControl/PlayerInventory" to="Hotbar/HotbarComponent" method="_on_player_inventory_changed"]
+
+[editable path="Hotbar"]

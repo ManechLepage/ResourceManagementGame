@@ -1,82 +1,104 @@
-[gd_scene load_steps=12 format=3 uid="uid://dyhbq1pqj3cjj"]
+[gd_scene load_steps=9 format=3 uid="uid://dyhbq1pqj3cjj"]
 
+[ext_resource type="Script" path="res://Scenes/game_manager.gd" id="1_aq21o"]
+[ext_resource type="Texture2D" uid="uid://cijnmxj22ptn1" path="res://icon.svg" id="1_pv8vu"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_q82ne"]
-[ext_resource type="Texture2D" uid="uid://cn3ur3430fawm" path="res://Graphics/Player/char_a_p1_0bas_humn_v01.png" id="2_n6t4l"]
+[ext_resource type="Resource" uid="uid://cfeecer26olu5" path="res://Resources/Items/Materials/wood.tres" id="2_rodbq"]
+[ext_resource type="Texture2D" uid="uid://d1hg318k2ikug" path="res://Graphics/Player/player.png" id="2_ymf61"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerAnimationSprite.gd" id="3_tyi6r"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ynlnw"]
-atlas = ExtResource("2_n6t4l")
-region = Rect2(0, 384, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gfwkd"]
-atlas = ExtResource("2_n6t4l")
-region = Rect2(64, 384, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7t0bb"]
-atlas = ExtResource("2_n6t4l")
-region = Rect2(128, 384, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nr86x"]
-atlas = ExtResource("2_n6t4l")
-region = Rect2(192, 384, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oxvj0"]
-atlas = ExtResource("2_n6t4l")
-region = Rect2(256, 384, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a5rr3"]
-atlas = ExtResource("2_n6t4l")
-region = Rect2(320, 384, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1qmmf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ynlnw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gfwkd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7t0bb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nr86x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oxvj0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a5rr3")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
+[ext_resource type="PackedScene" uid="uid://bcuim410h40ab" path="res://Scenes/UI/HUD.tscn" id="4_mqeus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4t3hq"]
-size = Vector2(20, 28)
+size = Vector2(33.3333, 31.6667)
 
 [node name="Node2D" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_aq21o")
+test_item = ExtResource("2_rodbq")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-0.500008, -0.499992)
+scale = Vector2(4.52344, 3.42969)
+texture = ExtResource("1_pv8vu")
 
 [node name="Player" type="CharacterBody2D" parent="."]
+unique_name_in_owner = true
 scale = Vector2(3, 3)
 script = ExtResource("1_q82ne")
-max_speed = 500.0
+max_speed = 700.0
 acceleration = 60.0
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="Player"]
-sprite_frames = SubResource("SpriteFrames_1qmmf")
-frame = 2
-frame_progress = 0.563367
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(2.33333, -1.16667)
+scale = Vector2(0.146965, 0.198068)
+texture = ExtResource("2_ymf61")
 script = ExtResource("3_tyi6r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_4t3hq")
 one_way_collision_margin = 0.0
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2(0.333333, 0.333333)
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_mqeus")]
+
+[node name="Hotbar" parent="CanvasLayer" index="0"]
+offset_left = -218.0
+offset_top = -87.0
+offset_right = 128.0
+offset_bottom = -13.0
+
+[node name="InventoryControl" parent="CanvasLayer" index="1"]
+offset_left = 465.856
+offset_top = 249.96
+offset_right = 466.104
+offset_bottom = 249.872
+
+[node name="Panel" parent="CanvasLayer/InventoryControl" index="0"]
+anchors_preset = -1
+anchor_left = -0.029
+anchor_top = -0.042
+anchor_right = 0.968
+anchor_bottom = 0.108
+offset_left = 0.0630007
+offset_top = 0.0460005
+offset_right = 0.103973
+offset_bottom = -0.122004
+
+[node name="PlayerInventory" parent="CanvasLayer/InventoryControl" index="1"]
+offset_left = -183.0
+offset_top = -220.0
+offset_right = 163.0
+offset_bottom = -10.0
+
+[node name="Structures" type="Node" parent="."]
+unique_name_in_owner = true
+
+[connection signal="toggled" from="CanvasLayer/Hotbar/Panel/GridInventory/Slot" to="CanvasLayer/Hotbar/Panel/GridInventory/Slot" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Hotbar/Panel/GridInventory/@TextureButton@418269" to="CanvasLayer/Hotbar/Panel/GridInventory/@TextureButton@418269" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Hotbar/Panel/GridInventory/@TextureButton@418270" to="CanvasLayer/Hotbar/Panel/GridInventory/@TextureButton@418270" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Hotbar/Panel/GridInventory/@TextureButton@418271" to="CanvasLayer/Hotbar/Panel/GridInventory/@TextureButton@418271" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Hotbar/Panel/GridInventory/@TextureButton@418272" to="CanvasLayer/Hotbar/Panel/GridInventory/@TextureButton@418272" method="_on_toggled"]
+[connection signal="inventory_changed" from="CanvasLayer/InventoryControl/PlayerInventory" to="CanvasLayer/Hotbar/HotbarComponent" method="_on_player_inventory_changed"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/Slot" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/Slot" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418273" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418273" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418274" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418274" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418275" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418275" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418276" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418276" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418277" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418277" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418278" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418278" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418279" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418279" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418280" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418280" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418281" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418281" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418282" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418282" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418283" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418283" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418284" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418284" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418285" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418285" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418286" to="CanvasLayer/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@418286" method="_on_toggled"]
+
+[editable path="CanvasLayer"]
+[editable path="CanvasLayer/Hotbar"]
+[editable path="CanvasLayer/InventoryControl/PlayerInventory"]

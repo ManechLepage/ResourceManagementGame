@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @export var max_speed : float
@@ -11,3 +12,5 @@ func _physics_process(delta):
 	velocity.y = move_toward(velocity.y, max_speed * direction.y, acceleration)
 	
 	move_and_slide()
+	
+	look_at(get_global_mouse_position())
