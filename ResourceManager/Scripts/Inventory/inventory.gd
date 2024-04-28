@@ -104,7 +104,14 @@ func set_selection(button:Node):
 	changed_selection.emit(self)
 
 func set_selection_by_link(slot_index:int):
-	remove_previous_selection(grid.get_child(slot_index))
+	if slot_index >= 0:
+		remove_previous_selection(grid.get_child(slot_index))
+	else:
+		remove_all_selections()
+
+func remove_all_selections():
+	for slot in grid.get_children():
+		slot.button_pressed = false
 
 func get_selection():
 	for slot in grid.get_children():

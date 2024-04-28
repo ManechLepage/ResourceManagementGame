@@ -26,3 +26,5 @@ func clear_slot():
 func _on_toggled(toggled_on):
 	if toggled_on:
 		get_parent().get_parent().get_parent().set_selection(self)
+	else:
+		get_parent().get_parent().get_parent().set_selection(null)

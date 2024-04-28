@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://22d6ahkom6y5"]
+
+[ext_resource type="Shader" path="res://Graphics/Shaders/color_tint_shader.gdshader" id="1_kht2y"]
+
+[resource]
+shader = ExtResource("1_kht2y")
+shader_parameter/colour = Color(0.716167, 0.204303, 0.303501, 1)
+shader_parameter/tint_factor = 0.706
+shader_parameter/fade = 0.568
