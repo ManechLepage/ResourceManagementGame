@@ -1,5 +1,6 @@
 @tool
 extends Control
+class_name Inventory
 
 @export_group("Settings")
 @export var can_be_dragged : bool
@@ -18,6 +19,7 @@ var initial_inventory_position : Vector2
 var is_being_dragged : bool = false
 
 signal inventory_changed(inventory)
+signal changed_selection(inventory)
 
 @onready var grid = $Panel/GridInventory
 
@@ -99,12 +101,23 @@ func update_inventory():
 
 func set_selection(button:Node):
 	remove_previous_selection(button)
-	get_tree().root.get_child(0).set_current_selection(button)
+	changed_selection.emit(self)
+
+func set_selection_by_link(slot_index:int):
+	remove_previous_selection(grid.get_child(slot_index))
+
+func get_selection():
+	for slot in grid.get_children():
+		if slot.button_pressed == true:
+			return slot
+	return null
 
 func remove_previous_selection(current_button:Node):
 	for slot in grid.get_children():
 		if slot != current_button:
 			slot.button_pressed = false
+		else:
+			slot.button_pressed = true
 
 func is_mouse_in_inventory():
 	var rect = get_parent().get_global_rect()

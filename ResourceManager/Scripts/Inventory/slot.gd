@@ -1,5 +1,5 @@
 extends TextureButton
-
+class_name Slot
 @onready var texture_rect = $TextureRect
 @onready var label = $Label
 
