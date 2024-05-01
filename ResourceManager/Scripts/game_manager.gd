@@ -18,7 +18,8 @@ func _input(event):
 	
 	if event.is_action_pressed("Test2"):
 		player_inventory.remove_item(test_item, 32)
-	
+
+func _unhandled_input(event):
 	if event.is_action_pressed("left click"):
 		if is_player_building:
 			is_building = true

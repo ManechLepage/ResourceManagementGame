@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://6bv2fnujlp0h"]
+
+[ext_resource type="Texture2D" uid="uid://bw73hab8mx00y" path="res://Graphics/Structures/ConveyorBelts/Straight/belt_strait1.png" id="1_0vp3u"]
+[ext_resource type="Texture2D" uid="uid://cpm71b6s5fr26" path="res://Graphics/Structures/ConveyorBelts/Straight/belt_strait2.png" id="2_4p50k"]
+[ext_resource type="Texture2D" uid="uid://c0nbbtt2qwq6p" path="res://Graphics/Structures/ConveyorBelts/Straight/belt_strait3.png" id="3_uati0"]
+[ext_resource type="Texture2D" uid="uid://iwxxlaswutcv" path="res://Graphics/Structures/ConveyorBelts/Straight/belt_strait4.png" id="4_imde6"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0vp3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4p50k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uati0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_imde6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]

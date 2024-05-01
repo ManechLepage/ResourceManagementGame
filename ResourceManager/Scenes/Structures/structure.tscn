@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dqwc0fff3pdl2"]
 
-[ext_resource type="Texture2D" uid="uid://drlgd1olq4jdd" path="res://Graphics/Structures/placeholder.png" id="1_npkif"]
+[ext_resource type="SpriteFrames" uid="uid://6bv2fnujlp0h" path="res://Graphics/Structures/ConveyorBelts/straight_conveyor_belt.tres" id="1_f1ufc"]
 [ext_resource type="Material" uid="uid://22d6ahkom6y5" path="res://Graphics/Shaders/structure_tint_incorrect.tres" id="1_ysjlt"]
 [ext_resource type="Script" path="res://Scripts/Structures/structure.gd" id="3_1itki"]
 [ext_resource type="Material" uid="uid://bjsswbwq6rgc" path="res://Graphics/Shaders/structure_tint.tres" id="3_rxtv0"]
@@ -8,9 +8,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cl6vt"]
 size = Vector2(64, 64)
 
-[node name="Strucuture" type="Sprite2D"]
+[node name="Strucuture" type="AnimatedSprite2D"]
 texture_filter = 1
-texture = ExtResource("1_npkif")
+sprite_frames = ExtResource("1_f1ufc")
+frame = 1
+frame_progress = 0.629845
 script = ExtResource("3_1itki")
 preview_shader = ExtResource("3_rxtv0")
 preview_shader_incorrect_position = ExtResource("1_ysjlt")
@@ -18,3 +20,5 @@ preview_shader_incorrect_position = ExtResource("1_ysjlt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("RectangleShape2D_cl6vt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
