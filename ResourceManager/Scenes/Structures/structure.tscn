@@ -19,8 +19,9 @@ point_count = 3
 [node name="Strucuture" type="AnimatedSprite2D"]
 texture_filter = 1
 sprite_frames = ExtResource("1_f1ufc")
-frame = 1
-frame_progress = 0.629845
+autoplay = "default"
+frame = 2
+frame_progress = 0.664078
 script = ExtResource("3_1itki")
 preview_shader = ExtResource("3_rxtv0")
 preview_shader_incorrect_position = ExtResource("1_ysjlt")
