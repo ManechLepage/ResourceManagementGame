@@ -1,12 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqwc0fff3pdl2"]
+[gd_scene load_steps=9 format=3 uid="uid://dqwc0fff3pdl2"]
 
 [ext_resource type="SpriteFrames" uid="uid://6bv2fnujlp0h" path="res://Graphics/Structures/ConveyorBelts/straight_conveyor_belt.tres" id="1_f1ufc"]
 [ext_resource type="Material" uid="uid://22d6ahkom6y5" path="res://Graphics/Shaders/structure_tint_incorrect.tres" id="1_ysjlt"]
 [ext_resource type="Script" path="res://Scripts/Structures/structure.gd" id="3_1itki"]
 [ext_resource type="Material" uid="uid://bjsswbwq6rgc" path="res://Graphics/Shaders/structure_tint.tres" id="3_rxtv0"]
+[ext_resource type="Script" path="res://Scripts/Structures/PathComponent.gd" id="5_58ixh"]
+[ext_resource type="Script" path="res://Scripts/Structures/ContainerComponent.gd" id="6_47fqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cl6vt"]
 size = Vector2(64, 64)
+
+[sub_resource type="Curve2D" id="Curve2D_0npmy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -32, 0)
+}
+point_count = 3
 
 [node name="Strucuture" type="AnimatedSprite2D"]
 texture_filter = 1
@@ -22,3 +30,12 @@ visible = false
 shape = SubResource("RectangleShape2D_cl6vt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="PathComponent" type="Path2D" parent="."]
+curve = SubResource("Curve2D_0npmy")
+script = ExtResource("5_58ixh")
+
+[node name="ContainerComponent" type="Node2D" parent="."]
+script = ExtResource("6_47fqm")
+
+[connection signal="item_added_to_inventory" from="ContainerComponent" to="PathComponent" method="_on_item_added_to_inventory"]
