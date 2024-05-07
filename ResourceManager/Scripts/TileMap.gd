@@ -6,7 +6,7 @@ var current_selected_structure : PackedScene = null
 var preview_structure : Structure
 
 func place_structure(structure:PackedScene):
-	var structure_scene : Structure= structure.instantiate()
+	var structure_scene : Structure = structure.instantiate()
 	structure_scene.grid_position = get_tile_position_of_structure(get_global_mouse_position())
 	structure_scene.position = get_global_position_of_structure(structure_scene.grid_position)
 	structures.add_child(structure_scene)

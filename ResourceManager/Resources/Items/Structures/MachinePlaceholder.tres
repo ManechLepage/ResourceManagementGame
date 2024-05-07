@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/Inventory/Items/StructureItem.gd" id="1_hglp7"]
 [ext_resource type="Texture2D" uid="uid://drlgd1olq4jdd" path="res://Graphics/Structures/placeholder.png" id="1_hur3v"]
-[ext_resource type="PackedScene" uid="uid://dqwc0fff3pdl2" path="res://Scenes/Structures/structure.tscn" id="3_xdcwh"]
+[ext_resource type="PackedScene" uid="uid://2dy50gtcxcdy" path="res://Scenes/Structures/Machines/Transport/conveyor_belt.tscn" id="3_c7l7p"]
 
 [resource]
 script = ExtResource("1_hglp7")
-structure_scene = ExtResource("3_xdcwh")
+structure_scene = ExtResource("3_c7l7p")
 name = "Placeholder Machine"
 description = "a machine."
 icon = ExtResource("1_hur3v")

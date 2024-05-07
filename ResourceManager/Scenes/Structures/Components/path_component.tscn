@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c58ns35wfv1ff"]
+
+[ext_resource type="Script" path="res://Scripts/Structures/PathComponent.gd" id="1_lowim"]
+
+[sub_resource type="Curve2D" id="Curve2D_2c8ly"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 32, 0, 0, 0, 0, 0, -32, 0)
+}
+point_count = 2
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_2c8ly")
+script = ExtResource("1_lowim")
+completion_time = 0.5
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(32, 0)
+rotation = 3.14159
+
+[node name="_Timer_28752" type="Timer" parent="PathFollow2D"]
+wait_time = 0.2
+one_shot = true

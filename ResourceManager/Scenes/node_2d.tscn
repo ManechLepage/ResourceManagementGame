@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dyhbq1pqj3cjj"]
+[gd_scene load_steps=11 format=3 uid="uid://dyhbq1pqj3cjj"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_aq21o"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_q82ne"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/PlayerAnimationSprite.gd" id="3_tyi6r"]
 [ext_resource type="PackedScene" uid="uid://bcuim410h40ab" path="res://Scenes/UI/HUD.tscn" id="4_mqeus"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="4_shnif"]
+[ext_resource type="PackedScene" uid="uid://2dy50gtcxcdy" path="res://Scenes/Structures/Machines/Transport/conveyor_belt.tscn" id="5_t8ggq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4t3hq"]
 size = Vector2(33.3333, 31.6667)
@@ -26,6 +27,9 @@ script = ExtResource("4_shnif")
 
 [node name="Structures" type="Node2D" parent="."]
 unique_name_in_owner = true
+
+[node name="Strucuture" parent="Structures" instance=ExtResource("5_t8ggq")]
+position = Vector2(-96, -32)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
@@ -63,25 +67,26 @@ mouse_filter = 2
 
 [connection signal="set_selection" from="CanvasLayer" to="." method="_on_set_selection"]
 [connection signal="toggled" from="CanvasLayer/Control/Hotbar/Panel/GridInventory/Slot" to="CanvasLayer/Control/Hotbar/Panel/GridInventory/Slot" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@21734" to="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@21734" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@21735" to="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@21735" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@21736" to="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@21736" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@21737" to="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@21737" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@48047" to="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@48047" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@48048" to="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@48048" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@48049" to="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@48049" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@48050" to="CanvasLayer/Control/Hotbar/Panel/GridInventory/@TextureButton@48050" method="_on_toggled"]
+[connection signal="inventory_changed" from="CanvasLayer/Control/InventoryControl/PlayerInventory" to="CanvasLayer/Control/Hotbar/HotbarComponent" method="_on_player_inventory_changed"]
 [connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/Slot" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/Slot" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21738" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21738" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21739" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21739" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21740" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21740" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21741" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21741" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21742" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21742" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21743" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21743" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21744" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21744" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21745" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21745" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21746" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21746" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21747" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21747" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21748" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21748" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21749" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21749" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21750" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21750" method="_on_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21751" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@21751" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48051" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48051" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48052" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48052" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48053" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48053" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48054" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48054" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48055" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48055" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48056" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48056" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48057" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48057" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48058" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48058" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48059" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48059" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48060" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48060" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48061" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48061" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48062" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48062" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48063" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48063" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48064" to="CanvasLayer/Control/InventoryControl/PlayerInventory/Panel/GridInventory/@TextureButton@48064" method="_on_toggled"]
 
 [editable path="CanvasLayer"]
 [editable path="CanvasLayer/Control/Hotbar"]
