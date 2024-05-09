@@ -1,15 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://2dy50gtcxcdy"]
+[gd_scene load_steps=5 format=3 uid="uid://2dy50gtcxcdy"]
 
 [ext_resource type="PackedScene" uid="uid://dqwc0fff3pdl2" path="res://Scenes/Structures/structure.tscn" id="1_cx53h"]
 [ext_resource type="PackedScene" uid="uid://c58ns35wfv1ff" path="res://Scenes/Structures/Components/path_component.tscn" id="2_vxqya"]
 [ext_resource type="PackedScene" uid="uid://cscietekpro8v" path="res://Scenes/Structures/Components/container_component.tscn" id="3_ifd5l"]
+[ext_resource type="Script" path="res://Scripts/Structures/SyncComponent.gd" id="4_xqa7x"]
 
 [node name="ConveyorBelt" groups=["Belt"] instance=ExtResource("1_cx53h")]
-frame_progress = 0.650174
-global_animation = true
+frame = 1
+frame_progress = 0.0
 
 [node name="Path2D" parent="." index="1" instance=ExtResource("2_vxqya")]
 
 [node name="ContainerComponent" parent="." index="2" instance=ExtResource("3_ifd5l")]
+
+[node name="SyncComponent" type="Node2D" parent="." index="3"]
+script = ExtResource("4_xqa7x")
 
 [editable path="Path2D"]

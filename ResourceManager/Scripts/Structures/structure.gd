@@ -1,8 +1,6 @@
 extends AnimatedSprite2D
 class_name Structure
 
-@export_category("Animation")
-@export var global_animation : bool
 @export_category("Preview")
 @export var preview_shader : ShaderMaterial
 @export var preview_shader_incorrect_position : ShaderMaterial
@@ -10,14 +8,6 @@ class_name Structure
 var grid_position:Vector2i
 var is_preview:bool = false
 var can_place:bool = true
-
-func _ready():
-	if global_animation:
-		get_tree().call_group("Belt", "reset_frame", "_frame", frame)
-
-func reset_frame(_frame : int):
-	print(_frame)
-	frame = _frame
 
 func set_structure_to_preview():
 	material = preview_shader
